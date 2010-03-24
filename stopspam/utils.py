@@ -3,7 +3,7 @@ from django.core.exceptions import ImproperlyConfigured
 from django.conf import settings
 
 
-def akismet_check(request=None, comment_author='', comment_author_email='', comment_author_url='', comment_content=''):
+def akismet_check(request=None, comment_author='', comment_author_email='', comment_author_url='', comment_content='', akismet_api_key=None):
     """
     Connects to Akismet and returns True if Akismet marks this content as
     spam. Otherwise returns False.
@@ -17,7 +17,7 @@ def akismet_check(request=None, comment_author='', comment_author_email='', comm
 
     # Check if the akismet api key is set, fail silently if
     # settings.DEBUG is False and return False (not moderated)
-    AKISMET_API_KEY = getattr(settings, 'AKISMET_API_KEY', False)
+    AKISMET_API_KEY = akismet_api_key or getattr(settings, 'AKISMET_API_KEY', False)
     if not AKISMET_API_KEY:
         raise ImproperlyConfigured('You must set AKISMET_API_KEY with your api key in your settings file.')
     
@@ -38,7 +38,7 @@ def akismet_check(request=None, comment_author='', comment_author_email='', comm
                 'user_ip': '',
                 'user_agent': '',
                 'referrer': '',
-            }            
+            }
         data.update({'comment_author': comment_author.encode('utf-8')})
         data.update({'comment_author_email': comment_author_email.encode('utf-8')})
         data.update({'comment_author_url': comment_author_url.encode('utf-8')})
