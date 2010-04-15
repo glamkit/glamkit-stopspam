@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.translation import ugettext as _
 
 
 
@@ -22,5 +23,5 @@ class RecaptchaChallenge(forms.Widget):
 class HoneypotWidget(forms.CheckboxInput):
     is_hidden = True
     def render(self, *args, **kwargs):
-        wrapper_html = '<div style="display:none"><label for="id_accept">Are you a robot?</label>%s</div>'
+        wrapper_html = '<div style="display:none"><label for="id_accept">' + _('Are you a robot?') + '</label>%s</div>'
         return wrapper_html % super(HoneypotWidget, self).render(*args, **kwargs)
