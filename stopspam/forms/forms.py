@@ -5,6 +5,7 @@ from stopspam import utils
 
 from fields import HoneypotField
 from widgets import RecaptchaChallenge, RecaptchaResponse
+from django.utils.translation import ugettext as _
 
 
 
@@ -38,9 +39,9 @@ class RecaptchaForm(BaseForm):
     recaptcha_challenge_field = forms.CharField(widget=RecaptchaChallenge)
     recaptcha_response_field = forms.CharField(
                 widget = RecaptchaResponse,
-                label = 'Please enter the two words on the image separated by a space:',
+                label = _('Please enter the two words on the image separated by a space:'),
                 error_messages = {
-                    'required': 'You did not enter any of the words.'
+                    'required': _('You did not enter any of the words.')
             })
     recaptcha_always_validate = False
     
@@ -65,13 +66,13 @@ class RecaptchaForm(BaseForm):
             rcf = self.cleaned_data['recaptcha_challenge_field']
             rrf = self.cleaned_data['recaptcha_response_field']
             if rrf == '':
-                raise forms.ValidationError('You did not enter the two words shown in the image.')
+                raise forms.ValidationError(_('You did not enter the two words shown in the image.'))
             else:
                 from recaptcha.client import captcha as recaptcha
                 ip = self._request.META['REMOTE_ADDR']
                 check = recaptcha.submit(rcf, rrf, self._recaptcha_private_key, ip)
                 if not check.is_valid:
-                    raise forms.ValidationError('The words you entered did not match the image')
+                    raise forms.ValidationError(_('The words you entered did not match the image'))
 
 class HoneyPotForm(BaseForm):
     accept_terms = HoneypotField()
