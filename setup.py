@@ -2,7 +2,9 @@ from setuptools import setup, find_packages
 
 setup(
     name='glamkit-stopspam',
-    version='0.0.1',
+    version='0.5.0',
+    author='Julien Phalip',
+    author_email='julien@interaction.net.au',
     description='A Django app to help you remove spam from your menu.',
     url='http://github.com/glamkit/glamkit-stopspam',
     packages=find_packages(),
