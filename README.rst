@@ -46,7 +46,7 @@ To use ReCAPTCHA, a pair of public and private API keys is required (obtainable 
 Honeypot Field
 --------------
 
-Since most automated spam software will check any available checkboxes in a form, assuming they are "agree to terms and conditions" checkboxes, a honeypot field that must be left unchecked for the form to validate and is hidden from users using a "display:none" style can easily thwart most spam bits. The functionality is enabled by subclassing HoneyPotForm, and will throw a validation error if the checkbox is checked.
+Since most automated spam software will check any available checkboxes in a form, assuming they are "agree to terms and conditions" checkboxes, a honeypot field that must be left unchecked for the form to validate and is hidden from users using a "display:none" style can easily thwart most spam bots. The functionality is enabled by subclassing HoneyPotForm, and will throw a validation error if the checkbox is checked.
 
 Dependencies:
 =============
