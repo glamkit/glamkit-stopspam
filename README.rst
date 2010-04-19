@@ -2,15 +2,6 @@
 GLAMkit-stopspam
 ================
 
-Hook `Akismet <http://akismet.com/>`_ into your commenting system. For more information, see the `documentation <http://docs.glamkit.org/stopspam/>`_.
-
-GLAMkit-holdingpage is part of the `GLAMkit framework <http://glamkit.org/>`_.
-
-Dependencies: Requires an Akismet account
-=======
-Glamkit-stopspam
-================
-
 A tool for detecting and filtering spam in user input. It is part of the `GLAMkit project <http://glamkit.org/>`_. For more information, see the `documentation <http://docs.glamkit.org/stopspam/>`_.
 
 View a full list of `GLAMkit components <http://docs.glamkit.org/components/>`_.
