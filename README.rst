@@ -60,8 +60,12 @@ ReCAPTCHA comes with different themes ('clean', 'red', 'white', 'blackglass', 'c
 		<input type="text" id="recaptcha_response_field" name="recaptcha_response_field" />
 		
 		<div><a href="javascript:Recaptcha.reload()">{% trans "Get another CAPTCHA" %}</a></div>
-		<div class="recaptcha_only_if_image"><a href="javascript:Recaptcha.switch_type('audio')">{% trans "Get an audio CAPTCHA" %}</a></div>
-		<div class="recaptcha_only_if_audio"><a href="javascript:Recaptcha.switch_type('image')">{% trans "Get an image CAPTCHA" %}</a></div>
+		<div class="recaptcha_only_if_image">
+			<a href="javascript:Recaptcha.switch_type('audio')">{% trans "Get an audio CAPTCHA" %}</a>
+		</div>
+		<div class="recaptcha_only_if_audio">
+			<a href="javascript:Recaptcha.switch_type('image')">{% trans "Get an image CAPTCHA" %}</a>
+		</div>
 		
 		<div><a href="javascript:Recaptcha.showhelp()">{% trans "Help" %}</a>
 	
