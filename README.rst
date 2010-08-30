@@ -43,6 +43,35 @@ An optional "recaptcha_always_validate" property can also be defined in the form
 
 To use ReCAPTCHA, a pair of public and private API keys is required (obtainable `here <http://recaptcha.net/whyrecaptcha.html>`_), which can be provided either as "RECAPTCHA_PUBLIC_KEY" and "RECAPTCHA_PRIVATE_KEY" in you Django settings file, or as "recaptcha_public_key" and "recaptcha_private_key" properties in your form.
 
+ReCAPTCHA comes with different themes ('clean', 'red', 'white', 'blackglass', 'custom'). You can choose a theme using "RECAPTCHA_THEME" in your Django settings file or by providing a "recaptcha_theme" property in your form. The default theme is 'clean'. If you choose 'custom' you have to provide some html in your template.
+
+::
+
+	<div id="recaptcha_widget" style="display:none">
+
+		<div id="recaptcha_image"></div>
+		<span class="recaptcha_only_if_incorrect_sol error_msg">{% trans "Incorrect please try again" %}</span>
+		
+		<label>
+			<span class="recaptcha_only_if_image">{% trans "Enter the words above:" %}</span>
+			<span class="recaptcha_only_if_audio">{% trans "Enter the numbers you hear:" %}</span>
+		</label>
+		
+		<input type="text" id="recaptcha_response_field" name="recaptcha_response_field" />
+		
+		<div><a href="javascript:Recaptcha.reload()">{% trans "Get another CAPTCHA" %}</a></div>
+		<div class="recaptcha_only_if_image"><a href="javascript:Recaptcha.switch_type('audio')">{% trans "Get an audio CAPTCHA" %}</a></div>
+		<div class="recaptcha_only_if_audio"><a href="javascript:Recaptcha.switch_type('image')">{% trans "Get an image CAPTCHA" %}</a></div>
+		
+		<div><a href="javascript:Recaptcha.showhelp()">{% trans "Help" %}</a>
+	
+	</div>
+	
+	{% autoescape off %}
+	{{ form.recaptcha_response_field }}
+	{% endautoescape %}
+
+
 Honeypot Field
 --------------
 
