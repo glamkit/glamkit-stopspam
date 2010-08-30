@@ -1,5 +1,5 @@
 from django import forms
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext as _, get_language
 
 
 
@@ -8,7 +8,9 @@ class RecaptchaResponse(forms.Widget):
 
     def render(self, *args, **kwargs):
         from recaptcha.client import captcha as recaptcha
-        recaptcha_options = "<script> var RecaptchaOptions = { theme: 'clean' }; </script>\n"
+        recaptcha_options = "<script> var RecaptchaOptions = { theme: '" + self.theme + \
+                            "', lang: '" + get_language()[0:2] + \
+                            ("', custom_theme_widget: 'recaptcha_widget'" if self.theme == 'custom' else "'") + " }; </script>\n"
         return recaptcha_options + recaptcha.displayhtml(self.public_key)
 
 class RecaptchaChallenge(forms.Widget):
