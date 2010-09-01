@@ -8,7 +8,6 @@ setup(
     description='A Django app to help you filter spam in your forms.',
     url='http://github.com/glamkit/glamkit-stopspam',
     packages=find_packages(),
-    zip_safe=False,
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
@@ -17,5 +16,8 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Framework :: Django',
-    ]
+    ],
+    include_package_data=True,
+    zip_safe=False,
+    install_requires=['setuptools'],
 )

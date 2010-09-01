@@ -3,4 +3,9 @@ DS_STORE
 *.pyc
 *~
 glamkit_stopspam.egg-info
-
+.project
+.pydevproject
+.settings
+*.egg-info
+build
+dist
