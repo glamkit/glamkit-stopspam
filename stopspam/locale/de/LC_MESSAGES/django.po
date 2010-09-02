@@ -24,19 +24,19 @@ msgstr "Bitte nicht anklicken."
 
 #: forms/forms.py:42
 msgid "Please enter the two words on the image separated by a space:"
-msgstr "Geben Sie bitte die beiden W&ouml;rter im Bild, durch ein Leerzeichen getrennt, ein."
+msgstr "Geben Sie bitte die beiden Wörter im Bild, durch ein Leerzeichen getrennt, ein."
 
 #: forms/forms.py:44
 msgid "You did not enter any of the words."
-msgstr "Sie haben keines der W&ouml;rter eingegeben."
+msgstr "Sie haben keines der Wörter eingegeben."
 
 #: forms/forms.py:71
 msgid "You did not enter the two words shown in the image."
-msgstr "Sie haben die beiden W&ouml;rter im Bild nicht eingegeben."
+msgstr "Sie haben die beiden Wörter im Bild nicht eingegeben."
 
 #: forms/forms.py:77
 msgid "The words you entered did not match the image"
-msgstr "Die eingegebenen W&ouml;rter waren nicht richtig."
+msgstr "Die eingegebenen Wörter waren nicht richtig."
 
 #: forms/widgets.py:28
 msgid "Are you a robot?"
