@@ -32,7 +32,7 @@ Akismet filtering also requires an "akismet_fields" dictionary to be defined as 
 		email = forms.EmailField(...)
 		comment = forms.TextField(...)
 
-To use Akismet, an API key is also required (obtainable `on the Akismet website <http://akismet.com/>`_), which can either be provided as "AKISMET_API_KEY" in your Django settings file, or as an "akismet_api_key" property in your form.
+To use Akismet, an API key is also required (obtainable `on the Akismet website <http://akismet.com/>`_), which can either be provided as "AKISMET_API_KEY" in your Django settings file, or as an "akismet_api_key" property in your form. You also need to set your domain url in django admin "sites".
 
 ReCAPTCHA
 ---------
