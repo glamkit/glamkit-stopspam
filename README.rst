@@ -71,9 +71,7 @@ ReCAPTCHA comes with different themes ('clean', 'red', 'white', 'blackglass', 'c
 	
 	</div>
 	
-	{% autoescape off %}
 	{{ form.recaptcha_response_field }}
-	{% endautoescape %}
 
 
 Honeypot Field

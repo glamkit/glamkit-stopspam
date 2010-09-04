@@ -1,6 +1,6 @@
 from django import forms
 from django.utils.translation import ugettext as _, get_language
-
+from django.utils.safestring import mark_safe
 
 
 # RECAPTCHA widgets
@@ -11,12 +11,14 @@ class RecaptchaResponse(forms.Widget):
         recaptcha_options = "<script> var RecaptchaOptions = { theme: '" + self.theme + \
                             "', lang: '" + get_language()[0:2] + \
                             ("', custom_theme_widget: 'recaptcha_widget'" if self.theme == 'custom' else "'") + " }; </script>\n"
-        return recaptcha_options + recaptcha.displayhtml(self.public_key)
+        return mark_safe(recaptcha_options + recaptcha.displayhtml(self.public_key))
+
 
 class RecaptchaChallenge(forms.Widget):
     is_hidden = True
     def render(self, *args, **kwargs):
-        return ''
+        return ""
+#        return mark_safe('')
     
     
     
@@ -26,4 +28,4 @@ class HoneypotWidget(forms.CheckboxInput):
     is_hidden = True
     def render(self, *args, **kwargs):
         wrapper_html = '<div style="display:none"><label for="id_accept">' + _('Are you a robot?') + '</label>%s</div>'
-        return wrapper_html % super(HoneypotWidget, self).render(*args, **kwargs)
+        return mark_safe(wrapper_html % super(HoneypotWidget, self).render(*args, **kwargs))
