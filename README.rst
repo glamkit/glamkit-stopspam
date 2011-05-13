@@ -2,7 +2,7 @@
 GLAMkit-stopspam
 ================
 
-A tool for detecting and filtering spam in user input. It is part of the `GLAMkit project <http://glamkit.org/>`_. For more information, see the `documentation <http://docs.glamkit.org/stopspam/>`_.
+A tool for detecting and filtering spam in user input. It is part of the `GLAMkit project <http://glamkit.org/>`_. For more information, see the `documentation <http://docs.glamkit.org/documentation/stopspam/>`_.
 
 View a full list of `GLAMkit components <http://docs.glamkit.org/components/>`_.
 
